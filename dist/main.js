@@ -33,4 +33,34 @@ const student = {
     },
 };
 console.log(student);
+let pupil = {
+    id: 2,
+    phone: 423423442,
+    name: 'Yousuf',
+    job: 'Programmer',
+    retire: (dailyTask) => {
+        console.log(dailyTask);
+    }
+};
+function buyDairy(price, quantity) {
+    if (typeof price === 'number')
+        return price * quantity;
+    else
+        return parseInt(price) * quantity;
+}
+console.log(buyDairy('234', 2));
+console.log(buyDairy(150, 3));
+let aStudent = {
+    read: () => { },
+    write: () => { },
+};
+let amount = 250;
+const saySomething = (talk) => {
+    if (talk)
+        return console.log(talk);
+    else
+        console.log('Say something..');
+};
+saySomething(null);
+saySomething('You are awesome!');
 //# sourceMappingURL=main.js.map

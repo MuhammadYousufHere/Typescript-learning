@@ -73,3 +73,79 @@ const student: {
 
 
 console.log(student)
+
+// 
+
+// Advanced types
+
+// 1 - type
+
+type Student = {
+    readonly id: number;
+    phone: number;
+    name: string;
+    job?: string;
+    retire: (dailyTask: string) => void;
+}
+
+let pupil:Student ={
+id:2,
+phone:4234_234_42,
+name:'Yousuf',
+job:'Programmer',
+retire: (dailyTask)=>{
+console.log(dailyTask)
+}
+
+}
+
+// 2 - Union
+// union of two types or more - [ | ]
+
+function buyDairy(price: number | string, quantity: number) {
+    if(typeof price === 'number')
+     return price * quantity
+
+     else 
+      return parseInt(price) * quantity
+}
+
+console.log(buyDairy('234', 2))
+console.log(buyDairy(150, 3))
+
+
+// 3 - Intersection 
+// Object - number and string at the same timr - [ & ]
+// ex - 
+type canRead = {
+    read : ()=> void
+}
+type canWrite = {
+    write : ()=> void
+}
+
+type Learner =  canRead & canWrite;
+
+let aStudent: Learner = {
+    read: ()=> {},
+    write: ()=> {},
+}
+
+// 4 - Literal types
+// exact or specific (any data type can be used)
+type Product = 'Milk' | 'Yogurt'
+type Amout = 230 | 250
+let amount: Amout = 250; 
+
+// 5 - Nullable
+
+// we can negotiate with null using union type , by default null is disliked bt TS
+
+const saySomething = (talk:string | null) =>{
+     if (talk) 
+     return console.log(talk)
+     else 
+      console.log('Say something..')
+}
+saySomething(null)
+saySomething('You are awesome!')
