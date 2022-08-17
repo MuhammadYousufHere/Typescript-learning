@@ -63,4 +63,12 @@ const saySomething = (talk) => {
 };
 saySomething(null);
 saySomething('You are awesome!');
+let email = document.getElementById('email');
+let Email = document.getElementById('email');
+email.value;
+function block() {
+    while (true) {
+    }
+}
+console.log('I,m not reachable');
 //# sourceMappingURL=main.js.map

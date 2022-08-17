@@ -149,3 +149,36 @@ const saySomething = (talk:string | null) =>{
 }
 saySomething(null)
 saySomething('You are awesome!')
+
+// 6 - Type asserstion
+// when you know more about type of an object
+//  as - not a type coversion but telling ts about an object/varialbe
+// ex: 
+
+let email = document.getElementById('email') as HTMLInputElement;
+// or
+let Email = <HTMLInputElement> document.getElementById('email');
+
+email.value
+
+
+// 8 - Unknown typw
+
+// perferred over any type
+
+// const dance(document: any)=> {
+//     document.fly()
+// }
+// const dance(document: unknown)=> {
+//     document.fly()
+// }
+
+// 9 - never type
+
+function  block() : never {
+    while(true){
+        // dance
+    }
+}
+
+console.log('I,m not reachable')
