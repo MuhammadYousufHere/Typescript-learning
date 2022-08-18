@@ -155,11 +155,11 @@ saySomething('You are awesome!')
 //  as - not a type coversion but telling ts about an object/varialbe
 // ex: 
 
-let email = document.getElementById('email') as HTMLInputElement;
+// let email = document.getElementById('email') as HTMLInputElement;
 // or
-let Email = <HTMLInputElement> document.getElementById('email');
+// let Email = <HTMLInputElement> document.getElementById('email');
 
-email.value
+// email.value
 
 
 // 8 - Unknown typw
@@ -182,3 +182,47 @@ function  block() : never {
 }
 
 console.log('I,m not reachable')
+
+
+// Section -3 
+// Object-Oriented
+
+class Teacher {
+    // read only
+   readonly id:number;
+    name:string;
+    subject:string;
+    teachesClass:string;
+    // optional
+    teacherOtherSubject?: string
+    // you could also make properties private./public 
+    // i.e grant access to certain prop/method to be accessible from
+    // outside or not.
+    private _personalShelf: string
+    constructor(id:number, name:string, subject:string,teachesClass:string, personalShelf:string){
+
+            this.id = id;
+            this.name =name;
+            this.subject= subject;
+            this.teachesClass = teachesClass
+            this._personalShelf = personalShelf
+
+        }
+     teach( hours: number, present:boolean): void {
+            if( present == true) {
+                console.log(`Mr. ${this.name} teaches to ${this.teachesClass} students for ${hours} hours.`)
+            }
+     }
+     keepsDoc () {
+        console.log(`Mr ${this.name} keeps his docs in his ${this._personalShelf}.`)
+
+     }   
+}
+
+let teacher = new Teacher(1, 'Muhammad Yousuf', 'javaScript', 'CS' ,'Locker')
+
+console.log(teacher.teach(2, true))
+console.log(teacher)
+console.log(typeof teacher)
+console.log(teacher instanceof Teacher )
+console.log(teacher.keepsDoc())

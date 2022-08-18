@@ -63,12 +63,32 @@ const saySomething = (talk) => {
 };
 saySomething(null);
 saySomething('You are awesome!');
-let email = document.getElementById('email');
-let Email = document.getElementById('email');
-email.value;
 function block() {
     while (true) {
     }
 }
 console.log('I,m not reachable');
+class Teacher {
+    constructor(id, name, subject, teachesClass, personalShelf) {
+        this.id = id;
+        this.name = name;
+        this.subject = subject;
+        this.teachesClass = teachesClass;
+        this._personalShelf = personalShelf;
+    }
+    teach(hours, present) {
+        if (present == true) {
+            console.log(`Mr. ${this.name} teaches to ${this.teachesClass} students for ${hours} hours.`);
+        }
+    }
+    keepsDoc() {
+        console.log(`Mr ${this.name} keeps his docs in his ${this._personalShelf}.`);
+    }
+}
+let teacher = new Teacher(1, 'Muhammad Yousuf', 'javaScript', 'CS', 'Locker');
+console.log(teacher.teach(2, true));
+console.log(teacher);
+console.log(typeof teacher);
+console.log(teacher instanceof Teacher);
+console.log(teacher.keepsDoc());
 //# sourceMappingURL=main.js.map
